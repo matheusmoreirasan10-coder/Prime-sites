@@ -128,7 +128,9 @@ const menuBtn = document.querySelector(".menu-btn");
 const nav = document.querySelector("nav");
 const body = document.body;
 
-/* DARK MODE */
+/* =========================
+   DARK MODE
+========================= */
 const temaSalvo = localStorage.getItem("tema");
 if (temaSalvo === "dark") {
     body.classList.add("dark");
@@ -136,6 +138,7 @@ if (temaSalvo === "dark") {
 } else {
     btnTema.textContent = "🌙";
 }
+
 btnTema.addEventListener("click", () => {
     body.classList.toggle("dark");
     if (body.classList.contains("dark")) {
@@ -147,11 +150,27 @@ btnTema.addEventListener("click", () => {
     }
 });
 
-/* MENU MOBILE */
+/* =========================
+   MENU MOBILE
+========================= */
 menuBtn.addEventListener("click", () => {
     nav.classList.toggle("active");       // abre/fecha menu
-    menuBtn.classList.toggle("active");   // anima o botão
+    menuBtn.classList.toggle("active");   // anima o botão X
     body.classList.toggle("menu-open");   // mostra/oculta fundo escuro
+});
+
+/* =========================
+   FECHAR MENU AO CLICAR FORA
+========================= */
+body.addEventListener("click", (e) => {
+    // Se o menu estiver aberto e o clique NÃO for no menu nem no botão
+    if(body.classList.contains("menu-open") && 
+       !nav.contains(e.target) && 
+       !menuBtn.contains(e.target)){
+        nav.classList.remove("active");
+        menuBtn.classList.remove("active");
+        body.classList.remove("menu-open");
+    }
 });
 </script>
 
