@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Sites</title>
+    <link rel="shortcut icon" href="logos/Logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="topo">
+        <h1>Prime Sites</h1>
+       <div class="menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contatos">Contato</a></li>
+            </ul>
+        </nav>
+            <button id="tema-btn">🌙</button>
+    </div>
+</header>
+
+<!-- INÍCIO -->
+<section id="inicio">
+    <div class="servico">
+        <h2>Prime Sites</h2>
+
+        <p class="descricao">
+            Landing pages modernas, rápidas e focadas em gerar resultados reais para seu negócio.
+        </p>
+
+        <ul class="vantagens">
+            <li>⚡ Carregamento rápido</li>
+            <li>📱 Totalmente responsivo</li>
+            <li>🎯 Focado em conversão</li>
+        </ul>
+
+        <a href="#" class="btn">Solicite seu orçamento</a>
+    </div>
+</section>
+
+
+<!-- SOBRE -->
+<section id="sobre">
+    <div class="sobre">
+
+        <div class="texto-sobre">
+            <h2>Sobre a Prime Sites</h2>
+
+            <p>
+                A Prime Sites nasceu do sonho de transformar ideias em presença digital de verdade. 
+                Fundada por Matheus, a empresa surgiu com o objetivo de ajudar negócios a se destacarem 
+                na internet através de landing pages modernas, rápidas e estratégicas.
+            </p>
+
+            <p>
+                Nosso foco é criar páginas que não sejam apenas bonitas, mas que realmente conectem empresas 
+                aos seus clientes, transmitindo confiança, profissionalismo e facilitando o crescimento no ambiente digital.
+            </p>
+
+            <p>
+                Acreditamos que um site não é apenas uma vitrine, mas uma ferramenta poderosa de marketing. 
+                Por isso, buscamos entender as necessidades de cada cliente para desenvolver soluções personalizadas.
+            </p>
+
+            <p>
+                Nossa missão é entregar serviços de alta qualidade e nos tornar referência em desenvolvimento web.
+            </p>
+        </div>
+
+
+        <div class="logo-sobre">
+            <picture>
+                <source media="(max-width: 400px)" srcset="logos/logo200px.jpeg">
+                <source media="(max-width: 600px)" srcset="logos/logo300px.jpeg">
+                <source media="(max-width: 800px)" srcset="logos/logo600px.jpeg">
+                <source media="(max-width: 1000px)" srcset="logos/logo800px.jpeg">
+                <img src="logos/logo800px.jpeg" alt="Logo Prime Sites">
+            </picture>
+        </div>
+
+    </div>
+</section>
+<section id="servicos">
+    <div class="servicos">
+    <h2>Nossos Serviços</h2>
+
+        <div class="servico-item">
+            <h3>Desenvolvimento de Landing Pages</h3>
+            <p>Criação de páginas otimizadas para conversão, com design moderno e responsivo.</p>
+        </div>
+
+        <div class="servico-item">
+            <h3>Otimização SEO</h3>
+            <p>Melhoria do posicionamento do seu site nos motores de busca para atrair mais visitantes.</p>
+        </div>
+
+        <div class="servico-item">
+            <h3>Manutenção e Suporte</h3>
+            <p>Suporte contínuo para garantir que seu site esteja sempre atualizado e funcionando perfeitamente.</p>
+        </div>
+    </div>
+    <footer id="contatos">
+    <h3>Contato</h3>
+    <ul class="redes">
+        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+        <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
+    <li><a href="#"><i class="fas fa-envelope"></i> Gmail</a></li>
+        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+    </ul>
+        <p>&copy; 2026 Prime Sites. Todos os direitos reservados.</p>
+</footer>
+  <script>
+const btnTema = document.getElementById("tema-btn");
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.querySelector("nav");
+const body = document.body;
+
+/* DARK MODE */
+const temaSalvo = localStorage.getItem("tema");
+if (temaSalvo === "dark") {
+    body.classList.add("dark");
+    btnTema.textContent = "☀️";
+} else {
+    btnTema.textContent = "🌙";
+}
+btnTema.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    if (body.classList.contains("dark")) {
+        btnTema.textContent = "☀️";
+        localStorage.setItem("tema", "dark");
+    } else {
+        btnTema.textContent = "🌙";
+        localStorage.setItem("tema", "light");
+    }
+});
+
+/* MENU MOBILE */
+menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");       // abre/fecha menu
+    menuBtn.classList.toggle("active");   // anima o botão
+    body.classList.toggle("menu-open");   // mostra/oculta fundo escuro
+});
+</script>
+
+</body>
+</html>

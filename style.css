@@ -1,0 +1,396 @@
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ================= TEMA PADRÃO (CLARO) ================= */
+
+body{
+    background:#f1f5f9;
+    color:#020617;
+    line-height:1.6;
+    transition:0.4s ease;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:white;
+    padding:20px 0;
+    border-bottom:1px solid #e2e8f0;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.topo{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.topo h1{
+    color:#38bdf8;
+    font-weight:700;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#020617;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* BOTÃO LUA */
+
+#tema-btn{
+    background:none;
+    border:none;
+    font-size:22px;
+    cursor:pointer;
+    margin-left:20px;
+    transition:.3s;
+}
+
+#tema-btn:hover{
+    transform:scale(1.2);
+}
+
+/* ================= HERO ================= */
+
+#inicio{
+    padding:120px 20px;
+    text-align:center;
+}
+
+.servico{
+    max-width:700px;
+    margin:auto;
+}
+
+.servico h2{
+    font-size:44px;
+    margin-bottom:20px;
+}
+
+.descricao{
+    color:#64748b;
+    margin-bottom:30px;
+}
+
+.vantagens{
+    list-style:none;
+    margin-bottom:40px;
+}
+
+.vantagens li{
+    margin:10px 0;
+    font-size:18px;
+}
+
+.btn{
+    background:#38bdf8;
+    color:white;
+    padding:15px 40px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#0ea5e9;
+    transform:translateY(-2px);
+}
+
+/* ================= SOBRE ================= */
+
+#sobre{
+    padding:90px 20px;
+    background:white;
+}
+
+.sobre{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    gap:60px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.texto-sobre{
+    flex:1;
+}
+
+.texto-sobre h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.texto-sobre p{
+    margin-bottom:15px;
+}
+
+.logo-sobre{
+    flex:1;
+    text-align:center;
+}
+
+.logo-sobre img{
+    max-width:100%;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* ================= SERVIÇOS ================= */
+
+#servicos{
+    padding:90px 20px;
+}
+
+.servicos{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.servicos h2{
+    grid-column:1/-1;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.servico-item{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    border:1px solid #e2e8f0;
+    transition:.3s;
+}
+
+.servico-item:hover{
+    transform:translateY(-8px);
+    border-color:#38bdf8;
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.servico-item p{
+    color:#64748b;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:white;
+    padding:60px 20px;
+    text-align:center;
+    margin-top:80px;
+    border-top:1px solid #e2e8f0;
+}
+
+.redes{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.redes a{
+    text-decoration:none;
+    color:#020617;
+    font-size:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 22px;
+    border-radius:30px;
+    background:#f1f5f9;
+    transition:.3s;
+}
+
+.redes a:hover{
+    background:#38bdf8;
+    color:white;
+    transform:translateY(-3px);
+}
+
+/* ================= DARK MODE PERFEITO ================= */
+
+.dark{
+    background:#0f172a;
+    color:#e2e8f0;
+}
+
+.dark header,
+.dark footer{
+    background:#020617;
+    border-color:#1e293b;
+}
+
+.dark #sobre{
+    background:#020617;
+}
+
+.dark nav a{
+    color:#e2e8f0;
+}
+
+.dark .descricao,
+.dark .servico-item p{
+    color:#94a3b8;
+}
+
+.dark .servico-item{
+    background:#1e293b;
+    border:1px solid #334155;
+}
+
+.dark .texto-sobre p{
+    color:#e2e8f0;
+}
+
+.dark .redes a{
+    background:#1e293b;
+    color:#e2e8f0;
+}
+
+.dark .redes a:hover{
+    background:#38bdf8;
+    color:#020617;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media(max-width:768px){
+
+    .sobre{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+    .servico h2{
+        font-size:32px;
+    }
+}
+/* ===== BOTÃO MENU ===== */
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ===== MENU MOBILE PREMIUM ===== */
+
+.menu-btn{
+    display:none;
+    width:30px;
+    height:22px;
+    position:relative;
+    cursor:pointer;
+}
+
+.menu-btn span{
+    position:absolute;
+    width:100%;
+    height:3px;
+    background:currentColor;
+    border-radius:5px;
+    transition:.4s;
+}
+
+/* linhas */
+.menu-btn span:nth-child(1){ top:0; }
+.menu-btn span:nth-child(2){ top:9px; }
+.menu-btn span:nth-child(3){ bottom:0; }
+
+/* animação virar X */
+.menu-btn.active span:nth-child(1){
+    transform:rotate(45deg);
+    top:9px;
+}
+
+.menu-btn.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-btn.active span:nth-child(3){
+    transform:rotate(-45deg);
+    bottom:10px;
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media(max-width:768px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav{
+        position:fixed;
+        top:0;
+        right:-100%;
+        width:70%;
+        height:100vh;
+        background:inherit;
+        backdrop-filter:blur(10px);
+        transition:.4s;
+        padding-top:120px;
+        z-index:998;
+        box-shadow:-10px 0 30px rgba(0,0,0,0.2);
+    }
+
+    nav.active{
+        right:0;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:30px;
+        text-align:center;
+    }
+
+    nav a{
+        font-size:20px;
+    }
+
+    /* fundo escuro atrás do menu */
+    body.menu-open::after{
+        content:"";
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,0.4);
+        z-index:997;
+    }
+}
